@@ -27,7 +27,7 @@ pipeline {
 		}
 		stage('Deployment') {
 	    	steps {
-				sh 'sshpass -p "sandeep" scp target/gamutkart.war sandeep@172.17.0.2:/sarala/apache-tomcat-8.5.38/webapps'
+				sh 'sshpass -p "sandeep" scp target/gamutkart.war sandeep@172.17.0.2:/sarala/apache-tomcat-8.5.42/webapps'
 				sh 'sshpass -p "sandeep" ssh sandeep@172.17.0.2 "JAVA_HOME=/sarala/jdk1.8.0_151" "/sarala/apache-tomcat-8.5.38/bin/startup.sh"'
 	    	}
 		}
